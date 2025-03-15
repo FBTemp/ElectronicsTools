@@ -1,3 +1,5 @@
+Note: when I say we or us, I mean the official colaborators.
+
 # Contributing Guide
 Yes, contributing to this program can be difficult, and we do have guidelines, but we will discuss all of the above in this one document to ease up contrubuting. We really appreciate any contributions big or small. We value the importance of having a comunity that has a say in the matters of the project.
 
@@ -7,6 +9,7 @@ Yes, contributing to this program can be difficult, and we do have guidelines, b
 To start off, here are some tips:
 * Get VSCode and program from there when possible, it really eases up the process.
 * Found a bug you don't know how to fix? Report it in the "Issues" tab. (little circle with a dot)
+* The best way to contribute to ElectronicsTools is to create an app.
 
 ## Apps
 Feel free to create your own apps for the ElectronicsTools! You can make anything as long as it is in python (or can be executed via a python file, wink, wink...)
