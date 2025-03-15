@@ -1,30 +1,78 @@
 # imports
 import time as t
+import subprocess as sp
+
 
 #variables
-settings = open("settings.txt","r")
-print(settings.read())
+settings = open("Config/settings.txt","r")
+
 
 # variables
-IN = "OUI OUI BAGUETTE"
+IN = ""
+debug = ""
+
 
 # functions
-def readSettings(line):
-    print()
+#read  specific line in settings file
+def readSettings(line_number):
+    settings.seek(0)  #make sure that we are at the beginning
+    for _ in range(line_number - 1):
+        settings.readline()  #skip the lines we don't need
+    output = settings.readline().strip()  #read the line
+    return output #returns the lin (0/1)
+
+#skips a set amount of lines
 def skip_line(amount):
     for x in range(int(amount)):
         print()
+
+#sleeps only if debug mode is off
 def sleep(time):
-    t.sleep(int(time))
+    if debug == False:
+        t.sleep(int(time))
+
+#stops program
 def stop():
     print("Stopping program...")
+    #closing files
+    settings.close()
     sleep(3)
-    exit()
+    exit() #exit() will stop the program
+
 
 # main code
-print("Starting ElectronicsTools...")
-sleep(3)
+#setup
+print("Starting ElectronicsTools...") #tells user that the code is running
+sleep(1)
+debug = readSettings(12) #reads settings.txt row 12
+if debug == "1": #sets debug mode on
+    debug = True
+    print("Debug mode on.")
+elif debug == "0": #sets debug mode off
+    debug = False
+else: #signals mistake in settings.txt on row 12
+    print("Settings file error.")
+    print("settings.txt")
+    print("Row 12")
+    print("Read: \"" + debug + "\"")
+sleep(2)
+
+#input test
 IN = input("Press enter to start, press any key and enter to stop. ")
 if IN != "":
     stop()
-print("hello")
+
+#enter the while loop
+exit = False;
+while exit == False:
+    print("Apps:")
+    print("1 = Calculator")
+    print("X = Exit")
+    IN == input("Select an app: ")
+    if IN == "1":
+        sp.run(["python", "calculator.py"])
+    elif IN == "X":
+        exit = True
+
+#exit the program
+stop()
