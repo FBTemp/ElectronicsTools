@@ -79,10 +79,13 @@ exit = False
 while not exit:
     print("Apps:")
     print("1 = Calculator")
+    print("2 = Resistor Calculator")
     print("X = Exit")
     choice = input("Select an app: ")
     if choice == "1":
         sp.run(["python", "Apps/calculator.py"])
+    elif choice == "2":
+        sp.run(["python", "Apps/resistorcal.py"])
     elif choice == "X":
         exit = True
 
