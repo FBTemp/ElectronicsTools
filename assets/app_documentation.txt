@@ -1,0 +1,12 @@
+"""
+[app name]
+Made for ElectronicsTools.
+Made by: [your name]
+
+ElectronicsTools:
+https://github.com/FBTemp/ElectronicsTools/tree/main
+[your name]:
+[your site/email/other]
+
+©[year made] [your name]. All rights reserved.
+"""

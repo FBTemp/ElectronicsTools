@@ -1,15 +1,27 @@
+"""
+ElectronicsTools
+Made by:
+Fast-Blast and other open-source GitHub contributors.
+
+ElectronicsTools:
+https://github.com/FBTemp/ElectronicsTools
+Fast-Blast:
+https://linktr.ee/fast_blast
+"""
+
 # imports
 import time as t
 import subprocess as sp
 
 
 #variables
-settings = open("settings.txt","r")
+settings = open("Config/settings.txt","r")
 
 
 # variables
 IN = ""
 debug = ""
+choice = ""
 
 
 # functions
@@ -28,7 +40,7 @@ def skip_line(amount):
 
 #sleeps only if debug mode is off
 def sleep(time):
-    if debug == False:
+    if not debug:
         t.sleep(int(time))
 
 #stops program
@@ -37,7 +49,7 @@ def stop():
     #closing files
     settings.close()
     sleep(3)
-    exit() #exit() will stop the program
+    quit() #exit() will stop the program
 
 
 # main code
@@ -63,15 +75,15 @@ if IN != "":
     stop()
 
 #enter the while loop
-exit = False;
-while exit == False:
+exit = False
+while not exit:
     print("Apps:")
     print("1 = Calculator")
     print("X = Exit")
-    IN == input("Select an app: ")
-    if IN == "1":
-        sp.run(["python", "calculator.py"])
-    elif IN == "X":
+    choice = input("Select an app: ")
+    if choice == "1":
+        sp.run(["python", "Apps/calculator.py"])
+    elif choice == "X":
         exit = True
 
 #exit the program

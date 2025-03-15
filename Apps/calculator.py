@@ -1,39 +1,46 @@
-import time as t
+"""
+Calculator App
+Made for ElectronicsTools.
+Made by: Fast-Blast
 
-print("Running Calculator...")
-t.sleep(2)
-print("Calculator is running.")
-t.sleep(3)
+ElectronicsTools:
+https://github.com/FBTemp/ElectronicsTools
+Fast-Blast:
+https://linktr.ee/fast_blast
+
+©2025 Fast-Blast. All rights reserved.
+"""
+
+# tells the user that they outputs and inputs are from the calculator app
+def printe(text):
+    print("Calculator: " + text)
+def inpute(text):
+    return input("Calculator: " + text)
+
+# main program
+printe("Running Calculator...")
 exit = False #set exit to false to start the loop again
-while exit == False:
-    print("Calculator Menu:")
-    print("1 = Addition")
-    print("2 = Subtraction")
-    print("3 = Multiplication")
-    print("4 = Division")
-    print("X = Exit")
-    IN = input("Enter your choice: ")
+while not exit:
+    # print calculator menu options:
+    printe("Calculator Menu:\n            1 = Addition\n            2 = Subtraction\n            3 = Multiplication\n            4 = Division\n            X = Exit")
+    IN = inpute("Enter your choice: ")
+    # addition mode
     if IN == "1":
-        print("Addition...")
-        t.sleep(2)
-        print("Result: " + str(float(input("Enter first number: ")) + float(input("Enter second number: "))))
-        t.sleep(3)
+        printe("Addition...")
+        printe("Result: " + str(float(inpute("Enter first number: ")) + float(inpute("Enter second number: "))))
+    # subtraction mode
     elif IN == "2":
-        print("Subtraction...")
-        t.sleep(2)
-        print("Result: " + str(float(input("Enter first number: ")) - float(input("Enter second number: "))))
-        t.sleep(3)
+        printe("Subtraction...")
+        printe("Result: " + str(float(inpute("Enter first number: ")) - float(inpute("Enter second number: "))))
+    # multiplication mode
     elif IN == "3":
-        print("Multiplication...")
-        t.sleep(2)
-        print("Result: " + str(float(input("Enter first number: ")) * float(input("Enter second number: "))))
-        t.sleep(3)
+        printe("Multiplication...")
+        printe("Result: " + str(float(inpute("Enter first number: ")) * float(inpute("Enter second number: "))))
+    # division mode
     elif IN == "4":
-        print("Division...")
-        t.sleep(2)
-        print("Result: " + str(float(input("Enter first number: ")) / float(input("Enter second number: "))))
-        t.sleep(3)
+        printe("Division...")
+        printe("Result: " + str(float(inpute("Enter first number: ")) / float(inpute("Enter second number: "))))
+    # exit calculator app
     elif IN == "X":
         exit = True
-        print("Exiting Calculator...")
-        t.sleep(2)
+        printe("Exiting Calculator...")
