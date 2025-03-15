@@ -4,7 +4,7 @@ import subprocess as sp
 
 
 #variables
-settings = open("Config/settings.txt","r")
+settings = open("settings.txt","r")
 
 
 # variables
