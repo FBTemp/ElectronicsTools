@@ -13,9 +13,9 @@ https://linktr.ee/fast_blast
 
 # Display the calculator name
 def printe(text):
-    print("Resistor Calculator: " + text)
+    print("\33[1;49;33mResistor Calculator: \033[m" + text)
 def inpute(text):
-    return input("Resistor Calculator: " + text)
+    return input("\33[1;49;33mResistor Calculator: \033[m" + text)
 
 def color_code_calculator():
     # Display the calculator name

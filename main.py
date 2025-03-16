@@ -77,10 +77,10 @@ if IN != "":
 #enter the while loop
 exit = False
 while not exit:
-    print("Apps:")
-    print("1 = Calculator")
-    print("2 = Resistor Calculator")
-    print("X = Exit")
+    print("|Apps:")
+    print("|1 = Calculator")
+    print("|2 = Resistor Calculator")
+    print("|X = Exit")
     choice = input("Select an app: ")
     if choice == "1":
         sp.run(["python", "Apps/calculator.py"])
