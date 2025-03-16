@@ -13,9 +13,9 @@ https://linktr.ee/fast_blast
 
 # tells the user that they outputs and inputs are from the calculator app
 def printe(text):
-    print("Calculator: " + text)
+    print("\33[1;49;32mCalculator: \033[m" + text)
 def inpute(text):
-    return input("Calculator: " + text)
+    return input("\33[1;49;32mCalculator: \033[m" + text)
 
 # main program
 printe("Running Calculator...")
