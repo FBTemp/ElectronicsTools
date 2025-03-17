@@ -104,7 +104,7 @@ while not exit:
         print("\nRunning \33[1;49;94m" + app + "\033[m...")
         sleep(1)
         sp.run(["python", "Apps/" + app]) #run the app
-    elif choice == "X":
+    elif choice == "X" or choice == "x":
         exit = True
 
 #exit the program
