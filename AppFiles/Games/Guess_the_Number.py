@@ -3,7 +3,7 @@ import random as rd
 import time as t
 
 # initialise list of winning messages
-win = ["You win!", "Congratulations!", "Great job!", "You did great!", "Nice work!", "You're a winner!"]
+win = ["You win!", "Congratulations!", "Great job!", "You did great!", "Nice work!", "You're a winner!", "You did it!", "You're amazing!", "You're unstoppable!", "You're a true champion!", "Spectacular!"]
 
 # generates a random color for text
 def RandomColors(text, weight):
@@ -46,8 +46,20 @@ def RandomColors(text, weight):
 print(RandomColors("Guess the number!", 1))
 
 # get max and min numbers
-min = int(input(RandomColors("Enter the minimum number: ", 0)))
-max = int(input(RandomColors("Enter the maximum number: ", 0)))
+min = input(RandomColors("Enter the minimum number (R for random): ", 0))
+max = input(RandomColors("Enter the maximum number (R for random): ", 0))
+
+# check if the user wants a random number
+if min == 'r' or min == 'R':
+    min = rd.randint(1, 100)
+if max == 'r' or max == 'R':
+    max = rd.randint(min, 100)
+
+# make sure that min and max are integers
+min = int(min)
+max = int(max)
+
+# print the range
 
 # generate a random number between min and max
 print(RandomColors("Generating a random number between " + str(min) + " and " + str(max) + "...", 0))
