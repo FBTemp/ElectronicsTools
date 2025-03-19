@@ -3,6 +3,9 @@ import os
 
 print("Welcome to ElectronicsTools Games! Here, you may find various games to cure your boredom while waiting for that new Arduino board to arrive.")
 
+#setup
+operating_system = os.name
+
 #get all of the games
 games_path = "AppFiles/Games"
 files = [f for f in os.listdir(games_path) if os.path.isfile(os.path.join(games_path, f))]
@@ -23,6 +26,9 @@ while not exit:
     if choice.isdigit() and int(choice) <= len(games): #if the input is a number between 1 and the number of apps
         game = files[int(choice) - 1] #get the app name from the files list
         print("\nRunning \33[1;49;94m" + game + "\033[m...")
-        sp.run(["python", "AppFiles/Games/" + game]) #run the game
+        if operating_system == "posix": #unix-based systems
+            sp.run(["python3", "AppFiles/Games/" + game]) #run the game
+        else: #windows-based systems
+            sp.run(["python", "AppFiles/Games/" + game]) #run the game
     elif choice == "X":
         exit = True
