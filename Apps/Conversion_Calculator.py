@@ -1,5 +1,10 @@
 """
     WARNING: This app is currently giving wrong answers, will have to fix ratios by hand.
+
+    Time wasted so far:
+    18 minutes
+    Continue at:
+    Row 74
 """
 
 def temperature_converter():
@@ -58,10 +63,10 @@ def length_converter():
             result = fromDist / 25.4
             print("Distance is " + str(result) + "in")
         elif toUnit == 6:
-            result = fromDist / 39.3701
+            result = fromDist * 0.0032808399
             print("Distance is " + str(result) + "ft")
         elif toUnit == 7:
-            result = fromDist / 1760
+            result = fromDist * 0.0010936133
             print("Distance is " + str(result) + "yd")
         elif toUnit == 8:
             result = fromDist / 160934.4
