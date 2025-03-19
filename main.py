@@ -55,11 +55,13 @@ def stop():
 
 # main code
 #setup
+operating_system = os.name
 print("Starting ElectronicsTools...") #tells user that the code is running
 debug = readSettings(12) #reads settings.txt row 12
 if debug == "1": #sets debug mode on
     debug = True
-    print("\33[0;49;33mDebug mode on.\033[m")
+    print("\33[0;49;33mDebug mode on.")
+    print(f"The operating system is: {operating_system}\033[m")
 elif debug == "0": #sets debug mode off
     debug = False
 else: #signals mistake in settings.txt on row 12
@@ -103,7 +105,10 @@ while not exit:
         app = files[int(choice) - 1] #get the app name from the files list
         print("\nRunning \33[1;49;94m" + app + "\033[m...")
         sleep(1)
-        sp.run(["python", "Apps/" + app]) #run the app
+        if operating_system == "posix": #unix-based systems
+            sp.run(["python3", "Apps/" + app]) #run the app
+        else: #windows-based systems
+            sp.run(["python", "Apps/" + app]) #run the app
     elif choice == "X":
         exit = True
 
