@@ -1,0 +1,6 @@
+Through-hole Resistor
+Through-hole carbon resistor.
+Reduce current flow.
+Wikipedia Amazon
+https://en.wikipedia.org/wiki/Resistor https://www.amazon.com/IPUDIS-Resistor-10%CE%A9-1M%CE%A9-Assortment-Resistors/dp/B0DDST44L4?th=1
+Resistors can be used to lower the current flow of a circuit. An example would be to lower the voltage enough to not burn an LED. Resistors can come with many resisting values, view the "Resistor Calculator" for conversion.
